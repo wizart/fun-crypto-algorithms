@@ -1,0 +1,20 @@
+{
+  "name": "fun-crypto-algorithms",
+  "version": "1.0.0",
+  "description": "Some Crypto algorithms",
+  "main": "index.js",
+  "repository": "git@github.com:wizart/fun-crypto-algorithms.git",
+  "author": "Victor Ostapchuk <victor.ostapchuk@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.0",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.4"
+  }
+}
