@@ -13,7 +13,7 @@ export const powMod = (code: number, pow: number, mod: number) => {
     const chunksNumber = Math.ceil(pow / maxPow);
     const maxPowMod = Math.pow(code, maxPow) % mod;
 
-    if (pow % chunksNumber === 0) {
+    if (pow % maxPow === 0) {
         return powMod(maxPowMod, chunksNumber, mod);
     }
 

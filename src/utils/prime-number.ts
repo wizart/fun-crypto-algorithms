@@ -43,3 +43,25 @@ export const getRandomPrimeNumber = (min: number, max: number) => {
     const randomIndex = Math.floor(Math.random() * primeNumbersInRange.length)
     return primeNumbersInRange[randomIndex]
 }
+
+export const getCoprimeIntegersFor = (num: number) => {
+    const coprimeIntegers = [];
+    const divisors = getPrimeNumbersBy(num).filter(divisor => num % divisor === 0);
+
+    for(let i = 1; i < num; i += 1) {
+        let hasCommonDivisors = false;
+        let divisorIndex = 0;
+        while (i >= divisors[divisorIndex] && !hasCommonDivisors && divisorIndex < divisors.length) {
+            if (i % divisors[divisorIndex] === 0) {
+                hasCommonDivisors = true;
+            }
+            divisorIndex += 1;
+        }
+
+        if (!hasCommonDivisors) {
+            coprimeIntegers.push(i);
+        }
+    }
+
+    return coprimeIntegers;
+}

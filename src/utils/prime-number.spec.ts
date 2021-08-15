@@ -1,4 +1,4 @@
-import {getPrimeNumbersBy, getRandomPrimeNumber, isPrime} from "./prime-number";
+import {getCoprimeIntegersFor, getPrimeNumbersBy, getRandomPrimeNumber, isPrime} from "./prime-number";
 
 describe('Prime Number', () => {
     describe('isPrime', () => {
@@ -50,4 +50,21 @@ describe('Prime Number', () => {
             expect(isPrime(primeNumber)).toBeTruthy();
         });
     })
+
+    describe('getCoprimeIntegersFor', () => {
+        const cases: [num: number, coprimeIntegers: number[]][] = [
+            [2, [1]],
+            [3, [1, 2]],
+            [4, [1, 3]],
+            [5, [1, 2, 3, 4]],
+            [10, [1, 3, 7, 9]],
+            [11, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
+        ]
+
+        it.each(cases)('should find all coprimeIntegers for %s', (num, coprimeIntegers) => {
+            const foundCoprimeIntegers = getCoprimeIntegersFor(num);
+            expect(foundCoprimeIntegers).toEqual(coprimeIntegers);
+        });
+    })
 })
+

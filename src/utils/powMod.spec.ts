@@ -13,6 +13,7 @@ describe('powMod', () => {
         [3333, 7777, 31, 8],
         [105, 577, 3127, 847],
         [86, 3527, 6557, 4817],
+        [2, 10, 13, 10],
     ];
 
     it.each(cases)('should %s ^ %s mod %s = %s', (code, pow, mod, result) => {
